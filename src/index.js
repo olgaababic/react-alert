@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import {render} from 'react-dom';
 import {Modal} from 'react-bootstrap';
 
+import "./styles.less";
+
 class ReactAlert extends PureComponent {
     render() {
         return (<Modal show={this.props.showModal}
@@ -12,7 +14,7 @@ class ReactAlert extends PureComponent {
             <div className="modal-content-container">
                 {this.props.title && <Modal.Header>
                     <Modal.Title className={this.props.titleClass}>{this.props.title}
-                        <span className="pull-right glyphicon glyphicon-calendar"
+                        <span className="pull-right glyphicon glyphicon-remove"
                               onClick={() => this.props.closeModal()}/>
                     </Modal.Title>
                 </Modal.Header>}
@@ -22,21 +24,21 @@ class ReactAlert extends PureComponent {
                 <Modal.Footer>
                     {this.props.showSuccessButton && <div className={this.props.successButtonWrapperClass}>
                         <button className={this.props.successButtonClass}
-                                onClick={() => this.props.successButtonCallBack().then(() => {
+                                onClick={() => {
+                                    this.props.successButtonCallBack();
                                     if (this.props.closeAfterAction) {
                                         this.props.closeModal();
                                     }
-                                })}>{this.props.successButtonText}</button>
+                                }}>{this.props.successButtonText}</button>
                     </div>}
                     {this.props.showCancelButton && <div className={this.props.cancelButtonWrapperClass}>
                         <button className={this.props.cancelButtonClass}
-                                onClick={() =>
-                                    this.props.cancelButtonCallBack().then(() => {
-                                        if (this.props.closeAfterAction) {
-                                            this.props.closeModal();
-                                        }
-                                    })
-                                }>{this.props.cancelButtonText}</button>
+                                onClick={() => {
+                                    this.props.cancelButtonCallBack();
+                                    if (this.props.closeAfterAction) {
+                                        this.props.closeModal();
+                                    }
+                                }}>{this.props.cancelButtonText}</button>
                     </div>}
                 </Modal.Footer>
             </div>
