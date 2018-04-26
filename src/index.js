@@ -86,7 +86,7 @@ ReactAlert.propTypes = {
     closeAfterAction: PropTypes.bool
 };
 
-// export default ReactAlert;
+export default ReactAlert;
 
 
-render(<ReactAlert/>, document.getElementById("app"));
+// render(<ReactAlert/>, document.getElementById("app"));
