@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import {render} from 'react-dom';
 import {Modal} from 'react-bootstrap';
 
-import "./styles.less";
-
 class ReactAlert extends PureComponent {
     render() {
         return (<Modal show={this.props.showModal}
