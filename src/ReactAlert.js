@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 
-// import {render} from 'react-dom';
+import {render} from 'react-dom';
 import {Modal} from 'react-bootstrap';
 
 class ReactAlert extends PureComponent {
@@ -86,7 +86,7 @@ ReactAlert.propTypes = {
     closeAfterAction: PropTypes.bool
 };
 
-export default ReactAlert;
+// export default ReactAlert;
 
 
-// render(<ReactAlert/>, document.getElementById("app"));
+render(<ReactAlert/>, document.getElementById("app"));
