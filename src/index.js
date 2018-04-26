@@ -2,6 +2,8 @@ import React, {PureComponent} from 'react';
 import {render} from 'react-dom';
 // import {Modal} from 'react-bootstrap';
 import ReactAlert from './ReactAlert';
+import './styles.less';
+
 
 class Demo extends PureComponent {
 
