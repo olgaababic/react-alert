@@ -12,8 +12,10 @@ class ReactAlert extends PureComponent {
             <div className="modal-content-container">
                 {this.props.title && <Modal.Header>
                     <Modal.Title className={this.props.titleClass}>{this.props.title}
-                        <span className="pull-right glyphicon glyphicon-remove"
+                        <button type="button" className="close">
+                        <span className="glyphicon glyphicon-remove"
                               onClick={() => this.props.closeModal()}/>
+                        </button>
                     </Modal.Title>
                 </Modal.Header>}
                 {this.props.text &&
