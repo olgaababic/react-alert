@@ -7,7 +7,7 @@ import {Modal} from 'react-bootstrap';
 class ReactAlert extends PureComponent {
     render() {
         return (<Modal show={this.props.showModal}
-                       className="custom-modal"
+                       className={this.props.modalClassName}
         >
             <div className="modal-content-container">
                 {this.props.title && <Modal.Header>
@@ -46,6 +46,7 @@ class ReactAlert extends PureComponent {
 }
 
 ReactAlert.defaultProps = {
+    modalClassName: "custom-modal",
     showModal: true,
     title: null,
     titleClass: "react-alert-title",
@@ -68,6 +69,7 @@ ReactAlert.defaultProps = {
 };
 
 ReactAlert.propTypes = {
+    modalClassName: PropTypes.string,
     showModal: PropTypes.bool,
     title: PropTypes.string,
     titleClass: PropTypes.string,
