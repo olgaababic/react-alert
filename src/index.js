@@ -9,7 +9,7 @@ class ReactAlert extends PureComponent {
         return (<Modal show={this.props.showModal}
                        className={this.props.modalClassName}
         >
-            <div className={this.props.modalContentClassName}>
+            <div className={this.props.modalContentClassName} style={this.props.modelContentStyle}>
                 {this.props.title && <Modal.Header>
                     <Modal.Title className={this.props.titleClass}>{this.props.title}
                         <button type="button" className="close">
@@ -50,6 +50,7 @@ class ReactAlert extends PureComponent {
 ReactAlert.defaultProps = {
     modalClassName: "custom-modal",
     modalContentClassName: "modal-content-container",
+    modelContentStyle: null,
     showModal: true,
     title: null,
     titleClass: "react-alert-title",
@@ -74,6 +75,7 @@ ReactAlert.defaultProps = {
 ReactAlert.propTypes = {
     modalClassName: PropTypes.string,
     modalContentClassName: PropTypes.string,
+    modelContentStyle: PropTypes.object,
     showModal: PropTypes.bool,
     title: PropTypes.string,
     titleClass: PropTypes.string,
