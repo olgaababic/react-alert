@@ -48,8 +48,8 @@ class ReactAlert extends PureComponent {
 }
 
 ReactAlert.defaultProps = {
-    modalClassName: "custom-modal",
-    modalContentClassName: "modal-content-container",
+    modalClassName: "",
+    modalContentClassName: "",
     modelContentStyle: null,
     showModal: true,
     title: null,
