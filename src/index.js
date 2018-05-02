@@ -5,6 +5,10 @@ import {render} from 'react-dom';
 import {Modal} from 'react-bootstrap';
 
 class ReactAlert extends PureComponent {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return (<Modal show={this.props.showModal}
                        className={this.props.modalClassName}
