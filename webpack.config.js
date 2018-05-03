@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 
 module.exports = {
-    entry: path.join(__dirname, "src/ReactAlert.js"),
+    entry: path.join(__dirname, "src/index.js"),
     output: {
         path: path.join(__dirname, "lib"),
         filename: "index.js"
