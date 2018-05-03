@@ -1,53 +1,49 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import {render} from 'react-dom';
 import {Modal} from 'react-bootstrap';
 
-class ReactAlert extends Component {
-    constructor(props) {
-        super(props);
-    }
+function ReactAlert(props) {
 
-    render() {
-        return (<Modal show={this.props.showModal}
-                       className={this.props.modalClassName}
-        >
-            <div className={this.props.modalContentClassName} style={this.props.modelContentStyle}>
-                {this.props.title && <Modal.Header>
-                    <Modal.Title className={this.props.titleClass}>{this.props.title}
-                        <button type="button" className="close">
+    return (<Modal show={props.showModal}
+                   className={props.modalClassName}
+    >
+        <div className={props.modalContentClassName} style={props.modelContentStyle}>
+            {props.title && <Modal.Header>
+                <Modal.Title className={props.titleClass}>{props.title}
+                    <button type="button" className="close">
                         <span className="glyphicon glyphicon-remove"
-                              onClick={() => this.props.closeModal()}/>
-                        </button>
-                    </Modal.Title>
-                </Modal.Header>}
-                {this.props.text &&
-                <Modal.Body>{this.props.text}</Modal.Body>}
+                              onClick={() => props.closeModal()}/>
+                    </button>
+                </Modal.Title>
+            </Modal.Header>}
+            {props.text &&
+            <Modal.Body>{props.text}</Modal.Body>}
 
-                <Modal.Footer>
-                    {this.props.showSuccessButton && <div className={this.props.successButtonWrapperClass}>
-                        <button className={this.props.successButtonClass}
-                                onClick={() => {
-                                    this.props.successButtonCallBack();
-                                    if (this.props.closeAfterAction) {
-                                        this.props.closeModal();
-                                    }
-                                }}>{this.props.successButtonText}</button>
-                    </div>}
-                    {this.props.showCancelButton && <div className={this.props.cancelButtonWrapperClass}>
-                        <button className={this.props.cancelButtonClass}
-                                onClick={() => {
-                                    this.props.cancelButtonCallBack();
-                                    if (this.props.closeAfterAction) {
-                                        this.props.closeModal();
-                                    }
-                                }}>{this.props.cancelButtonText}</button>
-                    </div>}
-                </Modal.Footer>
-            </div>
-        </Modal>);
-    }
+            <Modal.Footer>
+                {props.showSuccessButton && <div className={props.successButtonWrapperClass}>
+                    <button className={props.successButtonClass}
+                            onClick={() => {
+                                props.successButtonCallBack();
+                                if (props.closeAfterAction) {
+                                    props.closeModal();
+                                }
+                            }}>{props.successButtonText}</button>
+                </div>}
+                {props.showCancelButton && <div className={props.cancelButtonWrapperClass}>
+                    <button className={props.cancelButtonClass}
+                            onClick={() => {
+                                props.cancelButtonCallBack();
+                                if (props.closeAfterAction) {
+                                    props.closeModal();
+                                }
+                            }}>{props.cancelButtonText}</button>
+                </div>}
+            </Modal.Footer>
+        </div>
+    </Modal>);
+
 
 }
 
