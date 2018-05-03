@@ -1,10 +1,10 @@
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import {render} from 'react-dom';
 import {Modal} from 'react-bootstrap';
 
-class ReactAlert extends PureComponent {
+class ReactAlert extends Component {
     constructor(props) {
         super(props);
     }
